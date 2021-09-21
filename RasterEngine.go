@@ -2,7 +2,6 @@ package main
 
 import (
 	"image"
-	"image/color"
 )
 
 type RasterParameters struct {
@@ -27,12 +26,15 @@ func Engine(parameters RasterParameters) image.RGBA {
 	var di float64 = (parameters.iMax - parameters.iMin) / float64(parameters.rasterHeight)
 	var c complex128
 
+	colorBlend := ColorBlend{rainbowPalette[:], parameters.maxIterations}
+
 	for rx := 0; rx < parameters.rasterWidth; rx++ {
 		for ry := 0; ry < parameters.rasterHeight; ry++ {
 			c = complex(dx*float64(rx)+parameters.xMin, di*float64(ry)+parameters.iMin)
 
 			depth := parameters.fractalFunction(c, parameters.divergenceThreshold, parameters.maxIterations)
-			raster.Set(rx, ry, color.RGBA{uint8(depth), 0, 0, 255})
+			//raster.Set(rx, ry, color.RGBA{uint8(depth), 0, 0, 255})
+			raster.Set(rx, ry, colorBlend.Blend(depth))
 		}
 	}
 
