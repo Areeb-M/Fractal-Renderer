@@ -26,7 +26,7 @@ func Engine(parameters RasterParameters) image.RGBA {
 	var di float64 = (parameters.iMax - parameters.iMin) / float64(parameters.rasterHeight)
 	var c complex128
 
-	colorBlend := ColorBlend{rainbowPalette[:], parameters.maxIterations}
+	colorBlend := ColorBlend{rainbowPalette2[:], parameters.maxIterations}
 
 	for rx := 0; rx < parameters.rasterWidth; rx++ {
 		for ry := 0; ry < parameters.rasterHeight; ry++ {

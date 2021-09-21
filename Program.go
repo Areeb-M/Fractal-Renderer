@@ -8,8 +8,8 @@ import (
 func main() {
 	params := RasterParameters{
 		MandelbrotSet,
-		1600,
-		900,
+		16000,
+		9000,
 		-.9,
 		.9,
 		-2.0,
