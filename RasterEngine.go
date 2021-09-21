@@ -32,7 +32,7 @@ func Engine(parameters RasterParameters) image.RGBA {
 			c = complex(dx*float64(rx)+parameters.xMin, di*float64(ry)+parameters.iMin)
 
 			depth := parameters.fractalFunction(c, parameters.divergenceThreshold, parameters.maxIterations)
-			raster.Set(rx, ry, color.RGBA{uint8(depth), 0, 0, 0})
+			raster.Set(rx, ry, color.RGBA{uint8(depth), 0, 0, 255})
 		}
 	}
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"image/jpeg"
+	"image/png"
 	"os"
 )
 
@@ -12,16 +12,16 @@ func main() {
 		900,
 		-.9,
 		.9,
-		-1.6,
-		1.6,
+		-2.0,
+		1.2,
 		255,
 		2.0,
 	}
 
 	img := Engine(params)
 
-	f, _ := os.Create("output.jpg")
+	f, _ := os.Create("output.png")
 	defer f.Close()
 
-	jpeg.Encode(f, img.SubImage(img.Rect), &jpeg.Options{jpeg.DefaultQuality})
+	png.Encode(f, img.SubImage(img.Rect))
 }
