@@ -22,7 +22,7 @@ func main() {
 
 	//params = ProduceRasterParameters(-0.04524074130409, 0.9868162207157852, 1920, 1080, 200000000, 1024, 2.0)
 	// ^^ This is a really pretty output
-	params = ProduceRasterParameters(-0.04524074130409, 0.9868162207157852, 16000, 9000, 200000000, 1024, 2.0)
+	params = ProduceRasterParameters(-0.04524074130409, 0.9868162207157852, 1600, 900, 2000000000, 1024, 2.0)
 	//params = ProduceRasterParameters(0, 0, 1600, 900, 1, 255, 2.0)
 
 	img := Engine(params)
