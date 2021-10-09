@@ -8,8 +8,8 @@ import (
 func main() {
 	params := RasterParameters{
 		MandelbrotSet,
-		16000,
-		9000,
+		1600,
+		900,
 		-.9,
 		.9,
 		-2.0,
@@ -17,13 +17,6 @@ func main() {
 		1024,
 		2.0,
 	}
-
-	params = ProduceRasterParameters(-0.7463, 0.1103, 1920, 1080, 20000, 512, 2.0)
-
-	//params = ProduceRasterParameters(-0.04524074130409, 0.9868162207157852, 1920, 1080, 200000000, 1024, 2.0)
-	// ^^ This is a really pretty output
-	params = ProduceRasterParameters(-0.04524074130409, 0.9868162207157852, 1600, 900, 2000000000, 1024, 2.0)
-	//params = ProduceRasterParameters(0, 0, 1600, 900, 1, 255, 2.0)
 
 	img := Engine(params)
 
