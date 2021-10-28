@@ -36,8 +36,10 @@ func main() {
 }
 
 func ProduceRasterParameters(x float64, i float64, width int, height int, zoom float64, maxIterations int, divergenceThreshold float64, fractalFunction FractalFunction) RasterParameters {
+	// This scale was chosen arbitrarily to give good results at zoom = 1
 	var scale float64 = 3.2
 
+	// The size of each pixel in units
 	delta := scale / float64(width) / zoom
 
 	return RasterParameters{
