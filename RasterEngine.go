@@ -20,8 +20,11 @@ type RasterParameters struct {
 }
 
 func Engine(parameters RasterParameters) image.RGBA {
+	// Create an RGBA Image to hold the results of the calculations
 	raster := image.NewRGBA(image.Rect(0, 0, parameters.rasterWidth, parameters.rasterHeight))
 
+	// This calculates the change in coordinate that corresponds to each pixel
+	// Allows for grid like generation of the fractal
 	var dx float64 = (parameters.xMax - parameters.xMin) / float64(parameters.rasterWidth)
 	var di float64 = (parameters.iMax - parameters.iMin) / float64(parameters.rasterHeight)
 	var c complex128
